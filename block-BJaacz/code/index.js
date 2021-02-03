@@ -417,8 +417,7 @@ let filter = (arr, cb) => {
     console.log(multiplyByFive(5)); // 45
 */
 let multiplyBy = (num) => {
-  let something = (num2) => {
-    return num *  num2
+  return function (num2) {
+    return num * num2
   }
-  return something(num2)
 }
