@@ -148,6 +148,10 @@ Example:
    - `splice` just removees the specified number of elements to be removed from the specified index and can also be used to add elements at the specified index
    - It mutates the original array
 12. `find`
+    
+     ```
+   - `filter` can be used to iterate through the array such that each value is sent into the callback function and then it checks the condition, If it satisfies the condition then the value is returned back
+   - No it does not mutate the array
 13. `unshift`
     - Parameter: It consists of the elements that we want to add to the array
    - Return:  It returns the length of the array that has been formed after adding the elements by using the unshift method
@@ -163,7 +167,34 @@ Example:
     `unshift` accepts elements to be added to the array as parameters, It adds the elements to the beginning of the array and thus it mutates the array
     - It mutates the original array
 14. `findIndex`
+    - Parameter: It can  have a callback function and the current element being processed in the array
+   - Return:  It returns undefined
+   - Example:
+     ```js
+     const array1 = [5, 12, 8, 130, 44];
+     const isLargeNumber = (element) => element > 13;
+     console.log(array1.findIndex(isLargeNumber));//3
+     let colors = ['red', 'green', 'blue'];
+     const result = (element) => element == "green";
+     console.log(array1.findIndex(isLargeNumber));//
+     let colors = [];
+     colors.pop(); //undefined
 15. `filter`
+    - Parameter: It can  have a callback function and the current element being processed in the array
+   - Return:  It returns undefined
+   - Example:
+     ```js
+     const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+     const result = words.filter(word => word.length > 6);
+     console.log(result);//["exuberant", "destruction", "present"]
+     let colors = ['red', 'green', 'blue'];
+     const result = words.filter(word => word.length > 3);
+     console.log(result);//["green", "blue"]
+     let colors = [];
+     colors.pop(); //undefined
+     ```
+   - `filter` can be used to iterate through the array such that each value is sent into the callback function and then it checks the condition, If it satisfies the condition then the value is returned back
+   - No it does not mutate the array
 16. `flat`
 17. `forEach`
     - Parameter: It can  have a callback function and the current element being processed in the array
@@ -184,14 +215,19 @@ Example:
    - Return:  It returns the new array that has all the elements which have been executed through the call back function
    - Example:
      ```js
-     let numbers = [1, 2, 3, 4];
-     numbers.pop(); //4
-     let colors = ['red', 'green', 'blue'];
-     colors.pop(); //blue
+     const array1 = [1, 4, 9, 16];
+     const map1 = array1.map(x => x * 2);
+     console.log(map1); //[2, 8, 18, 32]
+     const sweetArray = [2, 3, 4, 5, 35]
+     const sweeterArray = sweetArray.map(sweetItem => {
+     return sweetItem * 3
+    })//[6, 9, 12, 15, 105]
+
+console.log(sweeterArray)
      let colors = [];
      colors.pop(); //undefined
      ```
-   - `pop` just removes the last element from the array and returns it
+   - `map` It creates a new array with  
    - It mutates the original array
 19. `pop`
     - Parameter: Its empty
