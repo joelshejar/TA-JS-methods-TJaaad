@@ -84,9 +84,14 @@ function isEighteen(num){
 let ret = someNumbers.findIndex(isEighteen)
 someNumbers[ret] = 1881
 // - Replace words in strings array with the length of the word
-
+let stringsLength = strings.map(
+  (string) => string.length
+)
 // - Find the sum of the length of words using above question
-
+stringsLength.reduce((acc,cv) => {
+  acc = acc + cv
+  return acc;
+}, 0)
 // - Customers Array
 var customers = [
   { firstname: 'Joe', lastname: 'Blogs' },
@@ -95,11 +100,17 @@ var customers = [
   { firstname: 'Jack', lastname: 'White' },
 ];
 // - Find all customers whose firstname starts with 'J'
-
+let filteredCustomer = customers.filter((customer) =>
+  customer.firstname.startsWith("J")
+)
 // - Create new array with only first name
-
+let firstnameCustomer = customers.map((customer) =>
+  customer.firstname
+)
 // - Create new array with all the full names (ex: "Joe Blogs")
-
+let fullnameCustomer = customers.map((customer) =>
+  {`${customer.firstname} ${customer.lastname}`}
+)
 // - Sort the array created above alphabetically
-
+[...fullnameCustomer].sort()
 // - Create a new array that contains only user who has at least one vowel in the firstname.
