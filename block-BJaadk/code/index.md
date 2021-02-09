@@ -103,7 +103,7 @@ let sum = numbers.reduce(add);
 ![](./img/img11.jpg)
 
 
-
+let kick =""
 
 
 
