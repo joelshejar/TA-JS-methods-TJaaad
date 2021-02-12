@@ -119,9 +119,8 @@ function peopleNameOfAllHouses() {
   let obj = {}
   
   got.houses.map(x => {
-    let arr = []
-    return x.people.map(y => {
-      obj[x.name] = arr.push(y.name)
+    obj[x.name] = x.people.map(y => {
+      return y.name
     })
   })
   console.log(obj)
