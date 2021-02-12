@@ -2,34 +2,129 @@
 
 function countAllPeople() {
   // your code goes here
+  let i=0
+  got.houses.forEach(x => x.people.forEach(y => {
+    i+=1
+    return i
+  }))
 }
 
 function peopleByHouses() {
   // your code goes here
+  got.houses.filter(x=>{
+    if(x.name =="Starks"){
+      return x.people.length
+    }
+    else if(x.name =="Lannisters"){
+      return x.people.length
+    }
+    else if(x.name =="Baratheons"){
+      return x.people.length
+    }
+    else if(x.name =="Targaryens"){
+      return x.people.length
+    }
+    else if(x.name =="Greyjoys"){
+      return x.people.length
+    }
+    else if(x.name =="Tyrells"){
+      return x.people.length
+    }
+    else if(x.name =="Tullys"){
+      return x.people.length
+    }
+    else if(x.name =="Redwyne"){
+      return x.people.length
+    }
+    else if(x.name =="Freys"){
+      return x.people.length
+    }
+    else if(x.name =="Arryns"){
+      return x.people.length
+    }
+    else if(x.name =="Dothrakis"){
+      return x.people.length
+    }
+  })
 }
 
 function everyone() {
   // your code goes here
+  let arr = []
+  got.houses.map(x => {
+    return x.people.map(y => {
+      
+      arr.push(y.name)
+    })
+  })
+  console.log(arr)
 }
 
 function nameWithS() {
   // your code goes here
+  let arr = []
+  got.houses.map(x => {
+    return x.people.filter(y => {
+      if(y.name.includes("S") || y.name.includes("s")){
+        arr.push(y.name)
+      }      
+    })
+  })
+  console.log(arr)
 }
 
 function nameWithA() {
   // your code goes here
+  let arr = []
+  got.houses.map(x => {
+    return x.people.filter(y => {
+      if(y.name.includes("A") || y.name.includes("a")){
+        arr.push(y.name)
+      }      
+    })
+  })
+  console.log(arr)
 }
 
 function surnameWithS() {
   // your code goes here
+  let arr = []
+  got.houses.filter(x => {
+    if(x.name.startsWith("S")){
+      return x.people.map(y => {
+        arr.push(y.name)
+      })
+    }
+    
+  })
+  console.log(arr)
 }
 
 function surnameWithA() {
   // your code goes here
+  let arr = []
+  got.houses.filter(x => {
+    if(x.name.startsWith("A")){
+      return x.people.map(y => {
+        arr.push(y.name)
+      })
+    }
+    
+  })
+  console.log(arr)
 }
 
 function peopleNameOfAllHouses() {
   // your code goes here
+  let obj = {}
+  
+  got.houses.map(x => {
+    let arr = []
+    return x.people.map(y => {
+      obj[x.name] = arr.push(y.name)
+    })
+  })
+  console.log(obj)
 }
 
 // Testing your result after writing your function
