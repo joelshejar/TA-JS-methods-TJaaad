@@ -2,34 +2,87 @@
 
 function countAllPeople() {
   // your code goes here
+  return got.houses.reduce((acc, curr) => {
+    acc += curr.people.length;
+    return acc
+  }, 0)
 }
 
 function peopleByHouses() {
   // your code goes here
+  return got.houses.reduce((acc, curr) => {
+    acc[curr.name] = curr.people.length
+    return acc
+  }, {})
 }
 
 function everyone() {
   // your code goes here
+  return got.houses.reduce((acc, curr) => {
+    curr.people.forEach(element => acc.push(element.name))
+    return acc
+  }, [])
 }
 
 function nameWithS() {
   // your code goes here
+  return got.houses.reduce((acc, curr) => {
+    curr.people.filter(element => {
+      if(element.name.includes('s') || element.name.includes('S')){
+        return acc.push(element.name)
+      }
+    })
+    return acc
+  }, [])
 }
 
 function nameWithA() {
   // your code goes here
+  return got.houses.reduce((acc, curr) => {
+    curr.people.filter(element => {
+      if(element.name.toLowerCase().includes('A')){
+        return acc.push(element.name)
+      }
+    })
+    return acc
+  }, [])
 }
 
 function surnameWithS() {
   // your code goes here
+  return got.houses.reduce((acc, curr) => {
+    curr.people.filter(element => {
+     let names =element.name.split(' ')
+      if(names[1].toLowerCase().startsWith('s')){
+        return acc.push(element.name)
+      }
+    })
+    return acc
+  }, [])
 }
 
 function surnameWithA() {
   // your code goes here
+  return got.houses.reduce((acc, curr) => {
+    curr.people.filter(element => {
+     let names =element.name.split(' ')
+      if(names[1].toLowerCase().startsWith('a')){
+        return acc.push(element.name)
+      }
+    })
+    return acc
+  }, [])
 }
 
 function peopleNameOfAllHouses() {
   // your code goes here
+  return got.houses.reduce((acc, curr) => {
+    acc[curr.name] = curr.people.reduce((a , b) => {
+      a.push(b.name)
+      return a;
+    },[]);
+    return acc
+  }, {})
 }
 
 // Testing your result after writing your function
